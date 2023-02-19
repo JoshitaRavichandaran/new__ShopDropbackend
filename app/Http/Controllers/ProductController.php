@@ -24,7 +24,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -41,7 +41,7 @@ class ProductController extends Controller
  
          return ["products"=>$products,"cart"=>$userProducts];
      } 
-    public function store(Request $request): array
+    public function store(Request $request)
     {
         $product = new Product;
         $product->name=$request->name;
@@ -67,7 +67,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): Response
+    public function edit(string $id)
     {
         //
     }
@@ -82,8 +82,8 @@ class ProductController extends Controller
         $product->name=$request->name;
         $product->price = $request->price;
         $product->image= $request->image;
-        $product->description = $request->description;
-        $product->cid = $request->cid;
+        // $product->description = $request->description;
+        // $product->cid = $request->cid;
         $product->save();
 
         return ["success"=>true, "message" => "Product Updated"];

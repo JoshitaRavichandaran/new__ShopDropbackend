@@ -35,6 +35,7 @@ Route::delete("/delete-from-cart/{userid}/{productid}",[UserProductController::c
 Route::put("/cart/update/{id}",[UserProductController::class,'update']);
 Route::resource('/categories',CategoryController::class);
 Route::resource('/products',ProductController::class);
+Route::post('/products/add',[ProductController::class,'store']);
 Route::delete("/clear-cart/{id}",[UserProductController::class,'destroy']);
 Route::post('/order',[OrderController::class,'store']);
 Route::post('/order-details',[OrderDetailsController::class,'store']);
